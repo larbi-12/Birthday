@@ -65,20 +65,6 @@
 
 
 
-async function sendVisitorInfo() {
-    try {
-        const res = await fetch('/.netlify/functions/collect', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ page: window.location.pathname })
-        });
-        const data = await res.json();
-        console.log('Visitor stored:', data);
-    } catch (err) {
-        console.error('Error storing visitor info:', err);
-    }
-}
 
-window.addEventListener('load', sendVisitorInfo);
 
 
